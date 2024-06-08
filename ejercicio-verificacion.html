@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIOS </title>
+</head>
+<body>
+    <h1> Verificar si un numero es par o impar</h1>
+    <input type="number" id="numero" placeholder="Ingresa un numero">
+    <button onclick="verificarNumero()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+      function verificarNumero() {
+        const numero = document.getElementById('numero').value;
+        const numeroConvertido = Number(numero);
+        const resultado = document.getElementById('resultado');
+
+        if (numeroConvertido > 0){
+         if (numeroConvertido % 2 == 0){
+          resultado.textContent = ` El numero ${numeroConvertido} es positivo y es par`;
+        } else{
+          resultado.textContent = ` El numero ${numeroConvertido} es positivo y es impar`;
+        } 
+      } else if (numeroConvertido < 0){
+        if (numeroConvertido % 2 == 0){
+          resultado.textContent = ` El numero ${numeroConvertido} es negativo y es par`;
+        } else {
+          resultado.textContent = ` El numero ${numeroConvertido} es negativo y es impar`;
+        }
+      } else {
+        resultado.textContent = 'El numero es cero y es par';
+      }
+    }
+    </script>
+</body>
+</html>

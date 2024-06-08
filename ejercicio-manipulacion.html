@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANIPULACION</title>
+    <style>
+        .cambiarColor{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1> Manipulacion del DOM con JavaScript</h1>
+    <!-- Elemento para mostrar la modificacion del DOM-->
+    <p id="demo"> Este es un parrafo. </p>
+
+    <!-- Botones para realizar acciones-->
+    <button onclick="cambiarContenido()">Cambiar Contenido </button>
+    <button onclick="cambiarColor()">Cambiar Color </button>
+    <button onclick="añadirElemento()">Añadir elemento </button>
+
+    <script>
+        // Funcion para cambiar el contenido del parrafo
+        function cambiarContenido(){
+            document.getElementById("demo").innerHTML = "Contenido Cambiado";
+        }
+        // Funcion para cambiar el color del texto
+        function cambiarColor(){
+            document.getElementById("demo").className = "cambiarColor";
+        }
+        // Funcion para anadir un nuevo elemento al final del cuerpo
+        function añadirElemento(){
+            var nuevoElemento = document.createElement("p");
+            var texto = document.createTextNode("Este es un nuevo parrafo.");
+            nuevoElemento.appendChild(texto);
+            document.body.appendChild(nuevoElemento);
+        }
+
+    </script>
+</body>
+</html>

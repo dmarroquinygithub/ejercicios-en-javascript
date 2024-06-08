@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones en JavaScript</title>
+</head>
+<body>
+    <h1> Funciones que invocan a otras funciones</h1>
+    <button onclick="startProcess()">Comenzar Proceso</button>
+    <div id="output"></div>
+
+    <script>
+        // Funcion para mostrar un mensaje en la pagina
+        function displayMessage(message){
+          // Obtener el elemento donde se mostraran los mensajes
+          const outputElement = document.getElementById('output');
+          // Crear un nuevo parrafo para el mensaje
+          const p = document.createElement('p');
+          // Establecer el contenido del parrafo al mensaje
+          p.textContent = message;
+          // Anadir el nuevo parrafo al elemento de salida 
+          outputElement.appendChild(p);
+        }
+
+        // Funcion que inicia el proceso
+        function startProcess(){
+           // Mostrar mensaje de inicio
+           displayMessage("Proceso iniciado...");
+           // Invocar la siguiente funcion en la secuencia 
+           stepOne();
+        }
+
+        // Funcion que representa el primer paso del proceso
+        function stepOne(){
+            // Mostrar mensaje del primer paso
+            displayMessage("Proceso 1 completado. ");
+            // Invocar la siguiente funcion de la secuencia 
+            stepTwo();
+        }
+
+        // Funcion que representa el segundo del proceso
+        function stepTwo(){
+           // Mostrar mensaje del segundo paso
+           displayMessage("Proceso 2 completado. ");
+           // Invocar la siguiente funcion de la secuencia 
+           finishProcess();
+        }
+
+        // Funcion que finaliza el proceso
+        function finishProcess(){
+            // Mostrar mensaje de finalizacion 
+            displayMessage("Proceso finalizado. "); 
+        }
+    </script>
+</body>
+</html>
